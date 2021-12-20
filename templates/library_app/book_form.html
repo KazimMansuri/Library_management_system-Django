@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="" method="POST">
+
+    {% csrf_token %}
+    {{form.as_p}}
+ 
+
+    
+     <input type="submit" value="create" name="" id="submit">
+
+     
+
+</form>
+
+<script>
+
+    $('#submit').click(function(){
+        
+        alert("YOUR BOOK IS CREATED");
+    })
+
+
+</script>
+
+
+
+{% endblock %}

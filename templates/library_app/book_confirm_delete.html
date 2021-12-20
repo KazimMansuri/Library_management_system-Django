@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+        <form action="" method="POST">
+
+            {% csrf_token %}
+
+            <h1>{{object.Book_name}}</h1>
+            <p>Are you sure want no delete this project?</p>
+
+            <input type="submit" name="" id="" value="Delete">
+
+        </form>
+{% endblock content %}

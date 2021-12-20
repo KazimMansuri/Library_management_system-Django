@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    
+    {% for book in object_list %}
+
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'app:Book-detail' book.id %}"><h1>NAME : {{book.Book_name}}</h1></a>
+        {% else %}
+        <a href="{% url 'app:Book-detail' book.id %}"  id="login"><h1>NAME : {{book.Book_name}}</h1></a>
+        {% endif %}
+
+        <br>
+        <p>Publish : {{book.Publish_Date}}</p>
+        <br>
+        <br>
+       <p> <strong>PRICE : {{book.Price}}</strong> </p>
+
+        <h1>-------------------------------------</h1>
+
+        {% empty %}
+
+        <h1>No Data Found</h1>
+
+        
+
+    {% endfor %}
+
+    <script>
+
+        $('#login').click(function loginFirst(){
+            
+            alert("please Login");
+        })
+    
+    
+    </script>
+
+    
+
+{% endblock content %}

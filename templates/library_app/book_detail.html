@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+    <h3>-----------------------------------</h3>
+
+
+       
+        <h1>NAME : {{object.Book_name}}</h1>
+        <br>
+            
+        <p>Description : {{object.Book_description}}  </p>
+
+        <br>
+        <p>Publish : {{book.Publish_Date}}</p>
+        <br>
+        <p> <strong>PRICE : {{book.Price}}</strong> </p>
+
+    <h3>-----------------------------------</h3>
+    
+    <button type="button"><a href="{% url 'app:Book-update' object.id %} " >Update</a></button>
+    <button type="button"><a href="{% url 'app:Book-delete' object.id %} ">Delete</a></button>
+
+  
+    
+{% endblock %}
